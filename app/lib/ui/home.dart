@@ -1,3 +1,4 @@
+import 'package:app/models/education.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/responsive_widget.dart';
@@ -271,6 +272,33 @@ Widget _skills(BuildContext context) {
         ),
       ),
       Wrap(children: widgets),
+    ],
+  );
+}
+
+final education = [
+  Education(
+    'Novembro/2021',
+    'Atualmente',
+    'Brisanet Telecomunicações',
+    'Desenvolvendor Full-Stack',
+  ),
+];
+
+Widget _education(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Text(
+        'Experiência',
+        style: TextStyle(
+          fontSize: 17.0,
+          letterSpacing: 1.2,
+        ),
+      ),
+      const Text(
+        'Programador front-end com experiência em desenvolvimento de aplicações web, mobile, layout e design responsivo. Sólidos conhecimentos com: HTML, CSS3 e JavaScript; experiência com o framework Angular 13+, Flutter/Dart, Push Notifications e Firebase.',
+      )
     ],
   );
 }
