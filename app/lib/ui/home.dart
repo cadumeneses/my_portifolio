@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:html' as html;
 
 import '../widgets/responsive_widget.dart';
 import '../screens/utils/screen_utils.dart';
@@ -170,7 +171,8 @@ Widget _largeScreen(BuildContext context) {
               )
             ],
           ),
-        )
+        ),
+        _footer(context),
       ],
     ),
   );
@@ -208,7 +210,7 @@ Widget _aboutMe(BuildContext context) {
             fontSize: ResponsiveWidget.isSmallScreen(context) ? 36.0 : 45.0),
       ),
       TextSpan(
-        text: 'Mim',
+        text: ' Mim',
         style: TextStyle(
             fontSize: ResponsiveWidget.isSmallScreen(context) ? 36.0 : 45.0),
       ),
@@ -220,7 +222,7 @@ Widget _headline(BuildContext context) {
   return const Text(
     'Eu sou o Carlos Eduardo, Desenvolvedor de Aplicativos Mobile e Desenvolvedor Web',
     style: TextStyle(
-      fontSize: 45.0,
+      fontSize: 20.0,
       fontWeight: FontWeight.bold,
       letterSpacing: 1.0,
       color: Colors.white,
@@ -342,6 +344,64 @@ Widget _skillsAndEducation(BuildContext context) {
       Expanded(flex: 1, child: _education(context)),
       const SizedBox(width: 40.0),
       Expanded(flex: 1, child: _skills(context)),
+    ],
+  );
+}
+
+Widget _footer(BuildContext context) {
+  return Column(
+    children: [
+      const Divider(),
+      Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                '© 2023  Desenvolvido por Carlos Eduardo',
+                style: TextStyle(
+                    fontSize:
+                        ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
+                    height: 1.5,
+                    letterSpacing: 1.0),
+              ),
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                      onTap: () {
+                        html.window.open(
+                            "https://www.linkedin.com/in/carlos-eduardo-75a31521b/",
+                            "LinkedIn");
+                      },
+                      child: SvgPicture.network(
+                        'https://static.licdn.com/sc/h/8a1a8xqjolkyjbf9n3i40oimj',
+                        height: 20,
+                        color: const Color(0xff0e76a8),
+                      )),
+                  const SizedBox(width: 16.0),
+                  InkWell(
+                      onTap: () {
+                        html.window
+                            .open("https://github.com/cadumeneses", "Github");
+                      },
+                      child: SvgPicture.network(
+                        'https://github.githubassets.com/favicons/favicon.svg',
+                        height: 20,
+                      )),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     ],
   );
 }
