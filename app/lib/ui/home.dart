@@ -182,7 +182,7 @@ Widget _content(BuildContext context) {
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 24.0 : 0.0),
       _headline(context),
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 12.0 : 24.0),
-      _description(context),
+      _description(),
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 24.0 : 48.0),
     ],
   );
@@ -222,17 +222,55 @@ Widget _headline(BuildContext context) {
   );
 }
 
-Widget _description(BuildContext context) {
+Widget _description() {
   return const Padding(
     padding: EdgeInsets.only(right: 80.0),
     child: Text(
       'Focado em ser um profissional com excelentes habilidades tecnicas e uma ótima comunicação, com 2 anos de experiência no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando além do que os olhos conseguem ver" para encontrar soluções inovadoras para problemas críticos.',
-      style:  TextStyle(
-        fontSize: 14.0,
-        height: 1.5,
-        letterSpacing: 1.0,
-        color: Colors.black
-      ),
+      style: TextStyle(
+          fontSize: 14.0, height: 1.5, letterSpacing: 1.0, color: Colors.black),
     ),
+  );
+}
+
+final skills = [
+  'Angular',
+  'Dart',
+  'Flutter',
+  'Android',
+  'iOS',
+  'Web',
+  'Programação assícrona',
+  'Firebase',
+  'Push Notification',
+  'Desing responsivo',
+  'SCRUM',
+  'JavaScript',
+  'TypeScript',
+  'PostgreSql',
+];
+
+Widget _skills(BuildContext context) {
+  final List<Widget> widgets = skills
+      .map((skill) => Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: Chip(
+              label: Text(skill),
+            ),
+          ))
+      .toList();
+  return Column(
+    mainAxisSize: MainAxisSize.max,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Text(
+        'Minhas habilidades',
+        style: TextStyle(
+          fontSize: 17.0,
+          letterSpacing: 1.2,
+        ),
+      ),
+      Wrap(children: widgets),
+    ],
   );
 }
