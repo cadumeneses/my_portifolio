@@ -93,44 +93,46 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            actions: [
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'About',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Skills',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Contacts',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              )
-            ],
+            actions: ResponsiveWidget.isSmallScreen(context)
+                ? null
+                : [
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'About',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Skills',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Contacts',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                    )
+                  ],
           ),
           body: LayoutBuilder(builder: (context, constraints) {
             return _body(context, constraints);
@@ -149,8 +151,8 @@ Widget _body(BuildContext context, BoxConstraints constraints) {
       ),
       child: ResponsiveWidget(
         largeScreen: _largeScreen(context),
-        mediumScreen: Column(),
-        smallScreen: Column(),
+        mediumScreen: _mediumScreen(context),
+        smallScreen: _smallScreen(context),
       ));
 }
 
@@ -169,6 +171,46 @@ Widget _largeScreen(BuildContext context) {
                 'assets/images/man_programmer.svg',
                 height: ScreenUtil.getInstance().setHeight(980),
               )
+            ],
+          ),
+        ),
+        _footer(context),
+      ],
+    ),
+  );
+}
+
+Widget _mediumScreen(BuildContext context) {
+  return IntrinsicHeight(
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(flex: 1, child: _content(context)),
+            ],
+          ),
+        ),
+        _footer(context),
+      ],
+    ),
+  );
+}
+
+Widget _smallScreen(BuildContext context) {
+  return IntrinsicHeight(
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(flex: 1, child: _content(context)),
             ],
           ),
         ),
