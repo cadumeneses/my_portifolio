@@ -1,4 +1,3 @@
-import 'package:app/models/education.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/responsive_widget.dart';
@@ -185,6 +184,9 @@ Widget _content(BuildContext context) {
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 12.0 : 24.0),
       _description(),
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 24.0 : 48.0),
+      _skillsAndEducation(
+        context,
+      )
     ],
   );
 }
@@ -227,7 +229,7 @@ Widget _description() {
   return const Padding(
     padding: EdgeInsets.only(right: 80.0),
     child: Text(
-      'Focado em ser um profissional com excelentes habilidades tecnicas e uma ótima comunicação, com 2 anos de experiência no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando além do que os olhos conseguem ver" para encontrar soluções inovadoras para problemas críticos.',
+      'Focado em ser um profissional com excelentes habilidades técnicas e uma ótim a comunicação, com 2 anos de experiência no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando além do que os olhos conseguem ver" para encontrar soluções inovadoras para problemas críticos.',
       style: TextStyle(
           fontSize: 14.0, height: 1.5, letterSpacing: 1.0, color: Colors.black),
     ),
@@ -276,15 +278,6 @@ Widget _skills(BuildContext context) {
   );
 }
 
-final education = [
-  Education(
-    'Novembro/2021',
-    'Atualmente',
-    'Brisanet Telecomunicações',
-    'Desenvolvendor Full-Stack',
-  ),
-];
-
 Widget _education(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -298,7 +291,51 @@ Widget _education(BuildContext context) {
       ),
       const Text(
         'Programador front-end com experiência em desenvolvimento de aplicações web, mobile, layout e design responsivo. Sólidos conhecimentos com: HTML, CSS3 e JavaScript; experiência com o framework Angular 13+, Flutter/Dart, Push Notifications e Firebase.',
+      ),
+      const SizedBox(height: 8.0),
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: const [
+            Text(
+              'Desenvolvendor Full-Stack',
+              style: TextStyle(
+                fontSize: 15.0,
+                letterSpacing: 1.0,
+                height: 1.5,
+              ),
+            ),
+            Text(
+              'Brisanet Telecomunicações',
+              style: TextStyle(
+                fontSize: 12.0,
+                letterSpacing: 1.0,
+                height: 1.5,
+              ),
+            ),
+            Text(
+              'Novembro/2021 - Atualmente',
+              style: TextStyle(
+                fontSize: 12.0,
+                letterSpacing: 1.0,
+                height: 1.5,
+              ),
+            ),
+          ],
+        ),
       )
+    ],
+  );
+}
+
+Widget _skillsAndEducation(BuildContext context) {
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Expanded(flex: 1, child: _education(context)),
+      const SizedBox(width: 40.0),
+      Expanded(flex: 1, child: _skills(context)),
     ],
   );
 }
