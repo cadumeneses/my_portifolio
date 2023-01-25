@@ -10,43 +10,82 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Color(0xFFF5F5F5),
+        color: Colors.grey,
         child: Padding(
           padding: EdgeInsets.symmetric(
               horizontal: (ScreenUtil.getInstance().setWidth(108))), //144
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.grey,
               elevation: 0,
-                title: RichText(
-              text: const TextSpan(
-                style: TextStyle(
-                  fontSize: 14.0,
-                  color: Colors.purple,
+              title: RichText(
+                text: const TextSpan(
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.purple,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Carlos',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22.0, //22.0
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.0,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Eduardo',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 22.0, //22.0
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.0,
+                      ),
+                    )
+                  ],
                 ),
-                children: [
-                  TextSpan(
-                    text: 'Carlos',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'About',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 82, 64, 160),
-                      fontSize: 22.0, //22.0
+                      color: Colors.white,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
                     ),
                   ),
-                  TextSpan(
-                    text: 'Eduardo',
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Skills',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 93, 95, 194),
-                      fontSize: 22.0, //22.0
+                      color: Colors.white,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
                     ),
-                  )
-                ],
-              ),
-            )),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Contacts',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ));
   }
