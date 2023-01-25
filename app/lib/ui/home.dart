@@ -179,6 +179,8 @@ Widget _content(BuildContext context) {
     children: [
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 24.0 : 0.0),
       _aboutMe(context),
+      SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 24.0 : 0.0),
+      _headline(context),
     ],
   );
 }
@@ -203,4 +205,16 @@ Widget _aboutMe(BuildContext context) {
       ),
     ],
   ));
+}
+
+Widget _headline(BuildContext context) {
+  return const Text(
+    'Eu sou o Carlos Eduardo, Mobile App Developer e Web Developer',
+    style: TextStyle(
+      fontSize: 45.0,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1.0,
+      color: Colors.white,
+    ),
+  );
 }
