@@ -1,3 +1,4 @@
+import 'package:app/widgets/responsive_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,6 +16,51 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: (ScreenUtil.getInstance().setWidth(108))), //144
           child: Scaffold(
+            drawer: ResponsiveWidget.isSmallScreen(context)
+                ? Drawer(
+                    child: ListView(
+                      padding: const EdgeInsets.all(20.0),
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'About',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.0,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Skills',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.0,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Contacts',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.0,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                : null,
             backgroundColor: Colors.transparent,
             appBar: AppBar(
               backgroundColor: Colors.grey,
