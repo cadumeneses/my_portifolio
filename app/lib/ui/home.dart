@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../widgets/responsive_widget.dart';
 import '../screens/utils/screen_utils.dart';
@@ -163,6 +164,10 @@ Widget _largeScreen(BuildContext context) {
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(flex: 1, child: _content(context)),
+              SvgPicture.asset(
+                'assets/images/man_programmer.svg',
+                height: ScreenUtil.getInstance().setHeight(980),
+              )
             ],
           ),
         )
@@ -184,9 +189,7 @@ Widget _content(BuildContext context) {
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 12.0 : 24.0),
       _description(),
       SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 24.0 : 48.0),
-      _skillsAndEducation(
-        context,
-      )
+      _skillsAndEducation(context)
     ],
   );
 }
@@ -229,7 +232,7 @@ Widget _description() {
   return const Padding(
     padding: EdgeInsets.only(right: 80.0),
     child: Text(
-      'Focado em ser um profissional com excelentes habilidades técnicas e uma ótim a comunicação, com 2 anos de experiência no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando além do que os olhos conseguem ver" para encontrar soluções inovadoras para problemas críticos.',
+      'Focado em ser um profissional com excelentes habilidades técnicas e uma ótima comunicação, com 2 anos de experiência no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando além do que os olhos conseguem ver" para encontrar soluções inovadoras para problemas críticos.',
       style: TextStyle(
           fontSize: 14.0, height: 1.5, letterSpacing: 1.0, color: Colors.black),
     ),
@@ -256,9 +259,12 @@ final skills = [
 Widget _skills(BuildContext context) {
   final List<Widget> widgets = skills
       .map((skill) => Padding(
-            padding: const EdgeInsets.only(right: 8.0),
+            padding: const EdgeInsets.only(right: 8.0, top: 5.0),
             child: Chip(
-              label: Text(skill),
+              label: Text(skill,
+                  style: TextStyle(
+                    fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 11,
+                  )),
             ),
           ))
       .toList();
@@ -290,7 +296,7 @@ Widget _education(BuildContext context) {
         ),
       ),
       const Text(
-        'Programador front-end com experiência em desenvolvimento de aplicações web, mobile, layout e design responsivo. Sólidos conhecimentos com: HTML, CSS3 e JavaScript; experiência com o framework Angular 13+, Flutter/Dart, Push Notifications e Firebase.',
+        'Desenvolvimento de aplicações web, layout e design responsivo: utilização do framework Angular; desenvolvimento de aplicações mobile: utilização de Dart, Flutter e Firebase; integração com API REST. Trabalho em equipe com metodologia SCRUM.',
       ),
       const SizedBox(height: 8.0),
       Padding(
