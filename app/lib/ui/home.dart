@@ -5,13 +5,22 @@ import 'dart:html' as html;
 import '../widgets/responsive_widget.dart';
 import '../screens/utils/screen_utils.dart';
 
+class CustomColor {
+  static const Color backgroundColor = Color.fromRGBO(16, 7, 39, 1);
+  static const Color chipColor = Color.fromRGBO(16, 7, 39, 0.9);
+  static const Color primaryColor = Color(0xFFfafafa);
+  static const Color secondaryColor = Color.fromRGBO(96, 43, 233, 1);
+  static const Color tertiaryColor = Color.fromRGBO(0, 214, 158, 1);
+  static const Color actionColor = Color(0XffFAFAFA);
+}
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.grey,
+      color: CustomColor.backgroundColor,
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: (ScreenUtil.getInstance().setWidth(108))), //144
@@ -26,7 +35,7 @@ class HomePage extends StatelessWidget {
                         child: const Text(
                           'About',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: CustomColor.secondaryColor,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.0,
@@ -38,7 +47,7 @@ class HomePage extends StatelessWidget {
                         child: const Text(
                           'Skills',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: CustomColor.secondaryColor,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.0,
@@ -50,7 +59,7 @@ class HomePage extends StatelessWidget {
                         child: const Text(
                           'Contacts',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: CustomColor.secondaryColor,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.0,
@@ -63,7 +72,7 @@ class HomePage extends StatelessWidget {
               : null,
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.transparent,
             elevation: 0,
             title: RichText(
               text: const TextSpan(
@@ -75,7 +84,7 @@ class HomePage extends StatelessWidget {
                   TextSpan(
                     text: 'Carlos',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: CustomColor.primaryColor,
                       fontSize: 22.0, //22.0
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
@@ -84,7 +93,7 @@ class HomePage extends StatelessWidget {
                   TextSpan(
                     text: 'Eduardo',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: CustomColor.secondaryColor,
                       fontSize: 22.0, //22.0
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
@@ -101,7 +110,7 @@ class HomePage extends StatelessWidget {
                       child: const Text(
                         'About',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: CustomColor.actionColor,
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1.0,
@@ -113,7 +122,7 @@ class HomePage extends StatelessWidget {
                       child: const Text(
                         'Skills',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: CustomColor.actionColor,
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1.0,
@@ -125,7 +134,7 @@ class HomePage extends StatelessWidget {
                       child: const Text(
                         'Contacts',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: CustomColor.actionColor,
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1.0,
@@ -249,12 +258,14 @@ Widget _aboutMe(BuildContext context) {
       TextSpan(
         text: 'Sobre',
         style: TextStyle(
-            fontSize: ResponsiveWidget.isSmallScreen(context) ? 36.0 : 45.0),
+            fontSize: ResponsiveWidget.isSmallScreen(context) ? 36.0 : 45.0,
+            color: CustomColor.primaryColor),
       ),
       TextSpan(
         text: ' Mim',
         style: TextStyle(
-            fontSize: ResponsiveWidget.isSmallScreen(context) ? 36.0 : 45.0),
+            fontSize: ResponsiveWidget.isSmallScreen(context) ? 36.0 : 45.0,
+            color: CustomColor.secondaryColor),
       ),
     ],
   ));
@@ -267,7 +278,7 @@ Widget _headline(BuildContext context) {
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
       letterSpacing: 1.0,
-      color: Colors.white,
+      color: CustomColor.primaryColor,
     ),
   );
 }
@@ -278,7 +289,10 @@ Widget _description() {
     child: Text(
       'Focado em ser um profissional com excelentes habilidades técnicas e uma ótima comunicação, com 2 anos de experiência no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando além do que os olhos conseguem ver" para encontrar soluções inovadoras para problemas críticos.',
       style: TextStyle(
-          fontSize: 14.0, height: 1.5, letterSpacing: 1.0, color: Colors.black),
+          fontSize: 14.0,
+          height: 1.5,
+          letterSpacing: 1.0,
+          color: CustomColor.primaryColor),
     ),
   );
 }
@@ -287,8 +301,6 @@ final skills = [
   'Angular',
   'Dart',
   'Flutter',
-  'Android',
-  'iOS',
   'Web',
   'Programação assícrona',
   'Firebase',
@@ -305,10 +317,16 @@ Widget _skills(BuildContext context) {
       .map((skill) => Padding(
             padding: const EdgeInsets.only(right: 8.0, top: 5.0),
             child: Chip(
-              label: Text(skill,
-                  style: TextStyle(
-                    fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 11,
-                  )),
+              backgroundColor: CustomColor.chipColor,
+              elevation: 0,
+              side: null,
+              label: Text(
+                skill,
+                style: TextStyle(
+                  fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 11,
+                  color: CustomColor.actionColor,
+                ),
+              ),
             ),
           ))
       .toList();
@@ -319,9 +337,9 @@ Widget _skills(BuildContext context) {
       const Text(
         'Minhas habilidades',
         style: TextStyle(
-          fontSize: 17.0,
-          letterSpacing: 1.2,
-        ),
+            fontSize: 17.0,
+            letterSpacing: 1.2,
+            color: CustomColor.primaryColor),
       ),
       Wrap(children: widgets),
     ],
@@ -337,10 +355,13 @@ Widget _education(BuildContext context) {
         style: TextStyle(
           fontSize: 17.0,
           letterSpacing: 1.2,
+          color: CustomColor.primaryColor,
+          fontWeight: FontWeight.bold,
         ),
       ),
       const Text(
         'Desenvolvimento de aplicações web, layout e design responsivo: utilização do framework Angular; desenvolvimento de aplicações mobile: utilização de Dart, Flutter e Firebase; integração com API REST. Trabalho em equipe com metodologia SCRUM.',
+        style: TextStyle(color: CustomColor.primaryColor),
       ),
       const SizedBox(height: 8.0),
       Padding(
@@ -354,6 +375,8 @@ Widget _education(BuildContext context) {
                 fontSize: 15.0,
                 letterSpacing: 1.0,
                 height: 1.5,
+                fontWeight: FontWeight.bold,
+                color: CustomColor.primaryColor,
               ),
             ),
             Text(
@@ -362,6 +385,7 @@ Widget _education(BuildContext context) {
                 fontSize: 12.0,
                 letterSpacing: 1.0,
                 height: 1.5,
+                color: CustomColor.primaryColor,
               ),
             ),
             Text(
@@ -370,6 +394,7 @@ Widget _education(BuildContext context) {
                 fontSize: 12.0,
                 letterSpacing: 1.0,
                 height: 1.5,
+                color: CustomColor.primaryColor,
               ),
             ),
           ],
@@ -393,7 +418,9 @@ Widget _skillsAndEducation(BuildContext context) {
 Widget _footer(BuildContext context) {
   return Column(
     children: [
-      const Divider(),
+      const Divider(
+        color: CustomColor.primaryColor,
+      ),
       Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
@@ -405,10 +432,11 @@ Widget _footer(BuildContext context) {
               child: Text(
                 '© 2023  Desenvolvido por Carlos Eduardo',
                 style: TextStyle(
-                    fontSize:
-                        ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
-                    height: 1.5,
-                    letterSpacing: 1.0),
+                  fontSize: ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
+                  height: 1.5,
+                  letterSpacing: 1.0,
+                  color: Colors.grey,
+                ),
               ),
             ),
             Align(
