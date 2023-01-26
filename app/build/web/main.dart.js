@@ -8179,7 +8179,7 @@ m=A.ZU(p,p,B.bC,p,p,!0,p,A.q7(A.a([m,A.q7(p,A.li(p,p,B.fg,p,p,p,p,p,p,p,p,a.M(o)
 s=A.hf(p,a.M(o).f.a.a<768?24:0,p)
 r=A.hf(p,a.M(o).f.a.a<768?12:24,p)
 q=t.F
-return A.lY(A.a([n,m,s,B.Oq,r,B.HZ,A.hf(p,a.M(o).f.a.a<768?24:48,p),A.mM(A.a([A.m2(A.lY(A.a([B.Om,B.Ol,B.JA,new A.dK(B.CK,A.lY(B.EA,B.dp,B.af,B.aA),p)],q),B.bM,B.af,B.aA),1),B.Jz,A.m2(A.atG(a),1)],q),B.bM,B.af,B.aA)],q),B.bM,B.rS,B.bV)},
+return A.lY(A.a([n,m,s,B.Oh,r,B.HZ,A.hf(p,a.M(o).f.a.a<768?24:48,p),A.mM(A.a([A.m2(A.lY(A.a([B.Om,B.Ol,B.JA,new A.dK(B.CK,A.lY(B.EA,B.dp,B.af,B.aA),p)],q),B.bM,B.af,B.aA),1),B.Jz,A.m2(A.atG(a),1)],q),B.bM,B.af,B.aA)],q),B.bM,B.rS,B.bV)},
 atG(a){var s=A.ab($.ajX).i("ah<1,dK>")
 return A.lY(A.a([B.Ok,new A.Ik(A.Z(new A.ah($.ajX,new A.aad(a),s),!0,s.i("b9.E")),null)],t.F),B.bM,B.af,B.aA)},
 adw(a){var s=null,r=t.F
@@ -35887,14 +35887,14 @@ O(a){var s,r,q,p=null,o=$.abp(),n=$.agS
 o.toString
 n=108*(n/1080)
 o=t.w
-if(a.M(o).f.a.a<768){s=A.a([A.x7(B.Oi,new A.V_()),A.x7(B.Oe,new A.V0()),A.x7(B.Op,new A.V1())],t.F)
+if(a.M(o).f.a.a<768){s=A.a([A.x7(B.Oi,new A.V_()),A.x7(B.Oe,new A.V0()),A.x7(B.Oq,new A.V1())],t.F)
 r=A.aW([null,0],t.LO,t.S)
 q=!0
 q=q?B.w5:p
 q=new A.CZ(new A.Eu(new A.a22(!0,!0,!0,s,r),B.CO,B.b2,!1,p,p,q,!1,p,3,B.aQ,B.Ix,p,B.ac,p),p)
 s=q}else s=p
 r=A.ZU(p,p,B.bC,p,p,!0,p,B.KE,B.aE,p,p,1,B.as)
-o=a.M(o).f.a.a<768?p:A.a([A.x7(B.Oo,new A.V2()),A.x7(B.Od,new A.V3()),A.x7(B.Of,new A.V4())],t.F)
+o=a.M(o).f.a.a<768?p:A.a([A.x7(B.Op,new A.V2()),A.x7(B.Od,new A.V3()),A.x7(B.Of,new A.V4())],t.F)
 return A.p6(B.al,new A.dK(new A.aU(n,0,n,0),new A.wn(new A.rG(r,o,0,B.J,new A.LP(p,p,1/0,56),p),new A.uw(new A.V5(),p),s,B.J,p),p),B.z,B.zY,0,p,p,p,p,p,B.bt)}}
 A.V_.prototype={
 $0(){},
@@ -65529,11 +65529,11 @@ B.JM=new A.hj(1,"round")
 B.JN=new A.hj(2,"bevel")
 B.Ez=A.a(s([B.c7,B.JM,B.JN]),A.Y("v<hj>"))
 B.KH=new A.r(!0,B.a7,null,null,null,null,15,B.ad,null,1,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.On=new A.dn("Desenvolvendor Full-Stack",null,B.KH,null,null)
+B.Oo=new A.dn("Desenvolvendor Full-Stack",null,B.KH,null,null)
 B.vC=new A.r(!0,B.a7,null,null,null,null,12,null,null,1,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.Og=new A.dn("Brisanet Telecomunica\xe7\xf5es",null,B.vC,null,null)
 B.Oj=new A.dn("Novembro/2021 - Atualmente",null,B.vC,null,null)
-B.EA=A.a(s([B.On,B.Og,B.Oj]),t.F)
+B.EA=A.a(s([B.Oo,B.Og,B.Oj]),t.F)
 B.b_=new A.q3(0,"upstream")
 B.R=new A.q3(1,"downstream")
 B.EK=A.a(s([B.b_,B.R]),A.Y("v<q3>"))
@@ -66684,8 +66684,8 @@ B.HX=new A.vi(0,null)
 B.HY=new A.vj(null)
 B.CI=new A.aU(0,0,80,0)
 B.Ny=new A.r(!0,B.a7,null,null,null,null,14,null,null,1,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Oh=new A.dn('Focado em ser um profissional com excelentes habilidades t\xe9cnicas e uma \xf3tima comunica\xe7\xe3o, com 2 anos de experi\xeancia no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando al\xe9m do que os olhos conseguem ver" para encontrar solu\xe7\xf5es inovadoras para problemas cr\xedticos.',null,B.Ny,null,null)
-B.HZ=new A.dK(B.CI,B.Oh,null)
+B.On=new A.dn('Com 2 anos de experi\xeancia no mercado de desenvolvimento de software, busco ser um profissional de excel\xeancia, com habilidades t\xe9cnicas refinadas e capacidade de comunica\xe7\xe3o eficaz. Possuo uma curva de aprendizagem r\xe1pida para novas linguagens e frameworks e busco constantemente encontrar solu\xe7\xf5es inovadoras para problemas cr\xedticos, sempre "pensando al\xe9m do que os olhos conseguem ver".',null,B.Ny,null,null)
+B.HZ=new A.dK(B.CI,B.On,null)
 B.ah=new A.vn(0,"fill")
 B.t9=new A.kJ(1/0)
 B.aq=new A.vq(0,"nonZero")
@@ -67215,6 +67215,8 @@ B.Od=new A.dn("Skills",null,B.kA,null,null)
 B.kz=new A.r(!0,B.fg,null,null,null,null,16,B.ad,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.Oe=new A.dn("Skills",null,B.kz,null,null)
 B.Of=new A.dn("Contacts",null,B.kA,null,null)
+B.NG=new A.r(!0,B.a7,null,null,null,null,20,B.ad,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Oh=new A.dn("Sou Carlos Eduardo, desenvolvedor de aplicativos mobile e web",null,B.NG,null,null)
 B.Oi=new A.dn("About",null,B.kz,null,null)
 B.LO=new A.r(!0,B.a7,null,null,null,null,17,null,null,1.2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.Ok=new A.dn("Minhas habilidades",null,B.LO,null,null)
@@ -67222,10 +67224,8 @@ B.MA=new A.r(!0,B.a7,null,null,null,null,null,null,null,null,null,null,null,null
 B.Ol=new A.dn("Desenvolvimento de aplica\xe7\xf5es web, layout e design responsivo: utiliza\xe7\xe3o do framework Angular; desenvolvimento de aplica\xe7\xf5es mobile: utiliza\xe7\xe3o de Dart, Flutter e Firebase; integra\xe7\xe3o com API REST. Trabalho em equipe com metodologia SCRUM.",null,B.MA,null,null)
 B.KS=new A.r(!0,B.a7,null,null,null,null,17,B.ad,null,1.2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.Om=new A.dn("Experi\xeancia",null,B.KS,null,null)
-B.Oo=new A.dn("About",null,B.kA,null,null)
-B.Op=new A.dn("Contacts",null,B.kz,null,null)
-B.NG=new A.r(!0,B.a7,null,null,null,null,20,B.ad,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Oq=new A.dn("Eu sou o Carlos Eduardo, Desenvolvedor de Aplicativos Mobile e Desenvolvedor Web",null,B.NG,null,null)
+B.Op=new A.dn("About",null,B.kA,null,null)
+B.Oq=new A.dn("Contacts",null,B.kz,null,null)
 B.R2=new A.HU(0,"system")
 B.Or=new A.xg(null)
 B.b0=new A.nc(0,"clamp")

@@ -273,7 +273,7 @@ Widget _aboutMe(BuildContext context) {
 
 Widget _headline(BuildContext context) {
   return const Text(
-    'Eu sou o Carlos Eduardo, Desenvolvedor de Aplicativos Mobile e Desenvolvedor Web',
+    'Sou Carlos Eduardo, desenvolvedor de aplicativos mobile e web',
     style: TextStyle(
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
@@ -287,7 +287,7 @@ Widget _description() {
   return const Padding(
     padding: EdgeInsets.only(right: 80.0),
     child: Text(
-      'Focado em ser um profissional com excelentes habilidades técnicas e uma ótima comunicação, com 2 anos de experiência no mercado de Desenvolvimento de Software. Tenho uma curva de aprendizagem muito boa para novas linguagens e frameworks. Cada dia mais "Pensando além do que os olhos conseguem ver" para encontrar soluções inovadoras para problemas críticos.',
+      'Com 2 anos de experiência no mercado de desenvolvimento de software, busco ser um profissional de excelência, com habilidades técnicas refinadas e capacidade de comunicação eficaz. Possuo uma curva de aprendizagem rápida para novas linguagens e frameworks e busco constantemente encontrar soluções inovadoras para problemas críticos, sempre "pensando além do que os olhos conseguem ver".',
       style: TextStyle(
           fontSize: 14.0,
           height: 1.5,
