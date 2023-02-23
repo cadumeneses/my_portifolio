@@ -2,17 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:html' as html;
 
+import '../screens/utils/custom_color.dart';
+import '../widgets/custom_drawer.dart';
 import '../widgets/responsive_widget.dart';
 import '../screens/utils/screen_utils.dart';
-
-class CustomColor {
-  static const Color backgroundColor = Color.fromRGBO(16, 7, 39, 1);
-  static const Color chipColor = Color.fromRGBO(16, 7, 39, 0.9);
-  static const Color primaryColor = Color(0xFFfafafa);
-  static const Color secondaryColor = Color.fromRGBO(96, 43, 233, 1);
-  static const Color tertiaryColor = Color.fromRGBO(0, 214, 158, 1);
-  static const Color actionColor = Color(0XffFAFAFA);
-}
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,49 +19,7 @@ class HomePage extends StatelessWidget {
             horizontal: (ScreenUtil.getInstance().setWidth(108))), //144
         child: Scaffold(
           drawer: ResponsiveWidget.isSmallScreen(context)
-              ? Drawer(
-                  child: ListView(
-                    padding: const EdgeInsets.all(20.0),
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'About',
-                          style: TextStyle(
-                            color: CustomColor.secondaryColor,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.0,
-                          ),
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Skills',
-                          style: TextStyle(
-                            color: CustomColor.secondaryColor,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.0,
-                          ),
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Contacts',
-                          style: TextStyle(
-                            color: CustomColor.secondaryColor,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.0,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                )
+              ? const CustomDrawer()
               : null,
           backgroundColor: Colors.transparent,
           appBar: AppBar(
