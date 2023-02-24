@@ -1,3 +1,4 @@
+import 'package:app/models/skill_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:html' as html;
@@ -248,34 +249,21 @@ Widget _description() {
   );
 }
 
-final skills = [
-  'Angular',
-  'Dart',
-  'Flutter',
-  'Web',
-  'Programação assícrona',
-  'Firebase',
-  'Push Notification',
-  'Desing responsivo',
-  'SCRUM',
-  'JavaScript',
-  'TypeScript',
-  'PostgreSql',
-];
-
 Widget _skills(BuildContext context) {
   final List<Widget> widgets = skills
       .map((skill) => Padding(
             padding: const EdgeInsets.only(right: 8.0, top: 5.0),
-            child: Chip(
-              backgroundColor: CustomColor.chipColor,
+            child: Card(
+              color: CustomColor.secondaryColor,
               elevation: 0,
-              side: null,
-              label: Text(
-                skill,
-                style: TextStyle(
-                  fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 11,
-                  color: CustomColor.actionColor,
+              child: Container(
+                margin: const EdgeInsets.all(8.0),
+                child: Text(
+                  skill.name,
+                  style: TextStyle(
+                    fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 11,
+                    color: CustomColor.actionColor,
+                  ),
                 ),
               ),
             ),
