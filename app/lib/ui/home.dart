@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                 : [
                     TextButton(
                       onPressed: () {},
-                      child: const Text(
+                      child: const SelectableText(
                         'About',
                         style: TextStyle(
                           color: CustomColor.actionColor,
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: const Text(
+                      child: const SelectableText(
                         'Skills',
                         style: TextStyle(
                           color: CustomColor.actionColor,
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: const Text(
+                      child: const SelectableText(
                         'Contacts',
                         style: TextStyle(
                           color: CustomColor.actionColor,
@@ -224,7 +224,7 @@ Widget _aboutMe(BuildContext context) {
 }
 
 Widget _headline(BuildContext context) {
-  return const Text(
+  return const SelectableText(
     'Sou Carlos Eduardo, desenvolvedor de aplicativos mobile e web',
     style: TextStyle(
       fontSize: 20.0,
@@ -238,7 +238,7 @@ Widget _headline(BuildContext context) {
 Widget _description() {
   return const Padding(
     padding: EdgeInsets.only(right: 80.0),
-    child: Text(
+    child: SelectableText(
       'Com 2 anos de experiência no mercado de desenvolvimento de software, busco ser um profissional de excelência, com habilidades técnicas refinadas e capacidade de comunicação eficaz. Possuo uma curva de aprendizagem rápida para novas linguagens e frameworks e busco constantemente encontrar soluções inovadoras para problemas críticos, sempre "pensando além do que os olhos conseguem ver".',
       style: TextStyle(
           fontSize: 14.0,
@@ -273,7 +273,7 @@ Widget _skills(BuildContext context) {
     mainAxisSize: MainAxisSize.max,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      const Text(
+      const SelectableText(
         'Minhas habilidades',
         style: TextStyle(
             fontSize: 17.0,
@@ -289,7 +289,7 @@ Widget _education(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      const Text(
+      const SelectableText(
         'Experiência',
         style: TextStyle(
           fontSize: 17.0,
@@ -298,7 +298,7 @@ Widget _education(BuildContext context) {
           fontWeight: FontWeight.bold,
         ),
       ),
-      const Text(
+      const SelectableText(
         'Desenvolvimento de aplicações web, layout e design responsivo: utilização do framework Angular; desenvolvimento de aplicações mobile: utilização de Dart, Flutter e Firebase; integração com API REST. Trabalho em equipe com metodologia SCRUM.',
         style: TextStyle(color: CustomColor.primaryColor),
       ),
@@ -308,7 +308,7 @@ Widget _education(BuildContext context) {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
-            Text(
+            SelectableText(
               'Desenvolvendor Full-Stack',
               style: TextStyle(
                 fontSize: 15.0,
@@ -318,7 +318,7 @@ Widget _education(BuildContext context) {
                 color: CustomColor.primaryColor,
               ),
             ),
-            Text(
+            SelectableText(
               'Brisanet Telecomunicações',
               style: TextStyle(
                 fontSize: 12.0,
@@ -327,7 +327,7 @@ Widget _education(BuildContext context) {
                 color: CustomColor.primaryColor,
               ),
             ),
-            Text(
+            SelectableText(
               'Novembro/2021 - Atualmente',
               style: TextStyle(
                 fontSize: 12.0,
@@ -368,7 +368,7 @@ Widget _footer(BuildContext context) {
           children: [
             Align(
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: SelectableText(
                 '© 2023  Desenvolvido por Carlos Eduardo',
                 style: TextStyle(
                   fontSize: ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
