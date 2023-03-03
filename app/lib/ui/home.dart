@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       child: const SelectableText(
-                        'About',
+                        'Sobre Mim',
                         style: TextStyle(
                           color: CustomColor.actionColor,
                           fontSize: 16.0,
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       child: const SelectableText(
-                        'Skills',
+                        'Habilidades',
                         style: TextStyle(
                           color: CustomColor.actionColor,
                           fontSize: 16.0,
@@ -81,15 +81,60 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: const SelectableText(
-                        'Contacts',
-                        style: TextStyle(
-                          color: CustomColor.actionColor,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1.0,
+                    Center(
+                      child: PopupMenuButton(
+                        tooltip: 'Meus contatos',
+                        itemBuilder: (context) {
+                          return [
+                            PopupMenuItem(
+                              onTap: () => html.window.open(
+                                "https://www.linkedin.com/in/carlos-eduardo-75a31521b/",
+                                "LinkedIn",
+                              ),
+                              child: ListTile(
+                                leading: SvgPicture.network(
+                                  'https://github.githubassets.com/favicons/favicon.svg',
+                                  height: 20,
+                                ),
+                                title: const Text('Github'),
+                              ),
+                            ),
+                            PopupMenuItem(
+                              onTap: () => html.window.open(
+                                "https://github.com/cadumeneses",
+                                "Github",
+                              ),
+                              child: ListTile(
+                                leading: SvgPicture.network(
+                                  'https://static.licdn.com/sc/h/8a1a8xqjolkyjbf9n3i40oimj',
+                                  height: 20,
+                                ),
+                                title: const Text('Linkedin'),
+                              ),
+                            ),
+                            PopupMenuItem(
+                              onTap: () => html.window.open(
+                                "https://wa.me/5588998638333",
+                                "WhatsApp",
+                              ),
+                              child: ListTile(
+                                leading: SvgPicture.asset(
+                                  'assets/images/whatsapp.svg',
+                                  height: 20,
+                                ),
+                                title: const Text('WhatsApp'),
+                              ),
+                            ),
+                          ];
+                        },
+                        child: const Text(
+                          'Contatos',
+                          style: TextStyle(
+                            color: CustomColor.actionColor,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.0,
+                          ),
                         ),
                       ),
                     )
