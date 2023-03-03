@@ -436,10 +436,9 @@ Widget _footer(BuildContext context) {
                             "LinkedIn");
                       },
                       child: SvgPicture.network(
-                        'https://static.licdn.com/sc/h/8a1a8xqjolkyjbf9n3i40oimj',
-                        height: 20,
-                        color: const Color(0xff0e76a8),
-                      )),
+                          'https://static.licdn.com/sc/h/8a1a8xqjolkyjbf9n3i40oimj',
+                          height: 20,
+                          color: CustomColor.primaryColor)),
                   const SizedBox(width: 16.0),
                   InkWell(
                       onTap: () {
@@ -448,6 +447,7 @@ Widget _footer(BuildContext context) {
                       },
                       child: SvgPicture.network(
                         'https://github.githubassets.com/favicons/favicon.svg',
+                        color: CustomColor.primaryColor,
                         height: 20,
                       )),
                 ],
